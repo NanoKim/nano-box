@@ -2,10 +2,12 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 export default defineConfig({
   plugins: [
     vue(),
+    libInjectCss(),
     dts({
       insertTypesEntry: true,
       include: ['src/**/*.ts', 'src/**/*.d.ts', 'src/**/*.vue'],
@@ -26,8 +28,5 @@ export default defineConfig({
         exports: 'named',
       },
     },
-  },
-  css: {
-    postcss: {},
   },
 })

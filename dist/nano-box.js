@@ -1,5 +1,5 @@
 import { Teleport as e, Transition as t, computed as n, createBlock as r, createCommentVNode as i, createElementBlock as a, createElementVNode as o, createVNode as s, defineComponent as c, inject as l, mergeProps as u, nextTick as d, normalizeClass as f, normalizeStyle as p, onMounted as m, openBlock as h, provide as g, ref as _, renderSlot as v, resolveComponent as y, resolveDynamicComponent as b, toDisplayString as x, unref as S, useAttrs as C, useSlots as w, vShow as ee, watch as T, withCtx as E, withDirectives as D, withModifiers as O } from "vue";
-//#region src/components/input/src/input.vue?vue&type=script&setup=true&lang.ts
+import './index.css';//#region src/components/input/src/input.vue?vue&type=script&setup=true&lang.ts
 var k = [
 	"type",
 	"value",

@@ -1,8 +1,10 @@
+import './style/main.css'
+
 import type { App } from 'vue'
 import { NanoInput } from './components/input'
 import { NanoContainer, NanoHeader, NanoAside, NanoMain, NanoFooter } from './components/layout'
 import { NanoMenu, NanoMenuItem, NanoSubMenu } from './components/menu'
-import { NanoTooltip } from './components/tooltip';
+import { NanoTooltip } from './components/tooltip'
 
 export { NanoInput }
 export { NanoContainer, NanoHeader, NanoAside, NanoMain, NanoFooter } from './components/layout'
