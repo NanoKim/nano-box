@@ -5,8 +5,10 @@
   "type": "module",
   "main": "./dist/nano-box.umd.cjs",
   "module": "./dist/nano-box.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/nano-box.js",
       "require": "./dist/nano-box.umd.cjs"
     },

@@ -124,13 +124,14 @@
 
 .nano-menu-vertical .nano-menu-item {
     width: 100%;
+    border-left: 3px solid transparent;
 }
 
 .nano-menu-vertical .nano-menu-item.is-active {
     color: var(--nano-color-primary);
     font-weight: 600;
     background-color: var(--nano-color-primary-light-9);
-    border-right: 3px solid var(--nano-color-primary);
+    border-left: 3px solid var(--nano-color-primary);
     border-bottom: none;
 }
 

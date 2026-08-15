@@ -26,7 +26,6 @@ const handleMenuSelect = (index: string) => {
         </nano-menu>
       </div>
 
-      <!-- 다크모드 전환 버튼 -->
       <button class="theme-btn" @click="toggleTheme">
         {{ isDark ? '🌞 라이트모드' : '🌙 다크모드' }}
       </button>
@@ -35,7 +34,7 @@ const handleMenuSelect = (index: string) => {
     <nano-container>
 
       <nano-aside width="240px" class="aside-area">
-        <div class="menu-title">Basic Components</div>
+        <div class="menu-title">Playground Menu List</div>
 
         <nano-menu mode="vertical" :default-active="activeMenu" max-height="600px" @select="handleMenuSelect">
           <nano-menu-item index="1">menu1</nano-menu-item>
@@ -147,13 +146,6 @@ html, body, #app {
   white-space: nowrap;
 }
 
-/* 탑 메뉴 배경 투명화 및 높이 맞춤 */
-.top-menu {
-  background-color: transparent !important;
-  border-bottom: none !important;
-  height: 100% !important;
-}
-
 .theme-btn {
   padding: 6px 14px;
   background-color: var(--nano-color-primary);
@@ -203,11 +195,7 @@ html, body, #app {
   background-color: var(--nano-bg-color);
 }
 
-/* Footer 영역 스타일 */
 .footer-area {
   justify-content: center;
-  font-size: 12px;
-  color: var(--nano-text-color-secondary);
-  border-top: 1px solid var(--nano-border-color-light);
 }
 </style>
