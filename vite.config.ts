@@ -26,6 +26,12 @@ export default defineConfig({
           vue: 'Vue',
         },
         exports: 'named',
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+            return 'nano-box.css'
+          }
+          return assetInfo.name || ''
+        },
       },
     },
   },
