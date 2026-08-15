@@ -8,6 +8,7 @@ export default defineConfig({
     vue(),
     dts({
       insertTypesEntry: true,
+      include: ['src/**/*.ts', 'src/**/*.d.ts', 'src/**/*.vue'],
     }),
   ],
   build: {
