@@ -1,0 +1,163 @@
+/* --- Nano Menu --- */
+.nano-menu {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    background-color: var(--nano-bg-color);
+    box-sizing: border-box;
+    display: flex;
+}
+
+.nano-menu-vertical {
+    flex-direction: column;
+    width: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.nano-menu-horizontal {
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    min-width: max-content;
+    overflow: visible;
+    white-space: nowrap;
+}
+/* --- Nano Menu --- */
+
+
+
+/* --- Nano Sub Menu --- */
+.nano-submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nano-submenu__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--nano-text-color-regular);
+    user-select: none;
+    transition: background-color 0.2s, color 0.2s;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.nano-submenu__title:hover {
+    background-color: var(--nano-color-primary-light-9);
+    color: var(--nano-color-primary);
+}
+
+.nano-submenu__title-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.nano-submenu.is-active .nano-submenu__title {
+    color: var(--nano-color-primary);
+    font-weight: 600;
+}
+
+.nano-submenu__arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+.nano-submenu__arrow.is-open {
+    transform: rotate(180deg);
+}
+
+.nano-submenu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--nano-bg-color);
+}
+
+.nano-submenu__list .nano-menu-item,
+.nano-submenu__list .nano-submenu .nano-submenu__title {
+    padding-left: 40px !important;
+}
+
+.nano-submenu__list .nano-submenu__list .nano-menu-item,
+.nano-submenu__list .nano-submenu__list .nano-submenu .nano-submenu__title {
+    padding-left: 55px !important;
+}
+/* --- Nano Sub Menu --- */
+
+
+
+/* --- Nano Menu Item --- */
+.nano-menu-item {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 14px;
+    color: var(--nano-text-color-regular);
+    box-sizing: border-box;
+    user-select: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.nano-menu-item:hover {
+    background-color: var(--nano-color-primary-light-9);
+    color: var(--nano-color-primary);
+}
+
+.nano-menu-vertical .nano-menu-item {
+    width: 100%;
+}
+
+.nano-menu-vertical .nano-menu-item.is-active {
+    color: var(--nano-color-primary);
+    font-weight: 600;
+    background-color: var(--nano-color-primary-light-9);
+    border-right: 3px solid var(--nano-color-primary);
+    border-bottom: none;
+}
+
+.nano-menu-horizontal .nano-menu-item.is-active {
+    color: var(--nano-color-primary);
+    font-weight: 600;
+    border-right: none;
+    border-bottom: 3px solid var(--nano-color-primary);
+    background-color: transparent;
+}
+
+.nano-menu-item.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: transparent;
+    color: var(--nano-disabled-text-color);
+}
+/* --- Nano Menu Item --- */
+
+
+
+/* --- Nano Menu Item Text Overflow --- */
+.nano-menu-item__text {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* --- Nano Menu Item Text Overflow --- */

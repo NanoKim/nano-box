@@ -1,0 +1,44 @@
+/* --- Nano Input --- */
+.nano-input {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+}
+
+.nano-input__inner {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: var(--nano-bg-color);
+    border: 1px solid var(--nano-border-color);
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease;
+    color: var(--nano-text-color-primary);
+    font-size: 14px;
+}
+
+.nano-input__inner:focus {
+    border-color: var(--nano-color-primary);
+    box-shadow: 0 0 0 3px var(--nano-color-primary-light-9);
+}
+
+.nano-input.is-disabled .nano-input__inner {
+    background-color: var(--nano-disabled-bg-color);
+    border-color: var(--nano-disabled-border-color);
+    color: var(--nano-disabled-text-color);
+    cursor: not-allowed;
+}
+
+.nano-input__clear {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    color: var(--nano-icon-color);
+    font-size: 12px;
+}
+
+.nano-input__clear:hover {
+    color: var(--nano-icon-hover-color);
+}
+/* --- Nano Input --- */

@@ -1,0 +1,32 @@
+/* --- Nano Tooltip --- */
+.nano-tooltip-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+}
+
+.nano-tooltip-content {
+    position: fixed;
+    background-color: var(--nano-tooltip-bg-color);
+    color: var(--nano-tooltip-text-color);
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 99999;
+    box-shadow: var(--nano-tooltip-box-shadow);
+    pointer-events: none;
+}
+
+.nano-fade-enter-active,
+.nano-fade-leave-active {
+    transition: opacity 0.2s ease;
+}
+
+.nano-fade-enter-from,
+.nano-fade-leave-to {
+    opacity: 0;
+}
+/* --- Nano Tooltip --- */

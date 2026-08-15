@@ -1,0 +1,48 @@
+{
+  "name": "nano-box",
+  "version": "1.0.0",
+  "description": "nano-box",
+  "type": "module",
+  "main": "./dist/nano-box.umd.cjs",
+  "module": "./dist/nano-box.js",
+  "exports": {
+    ".": {
+      "import": "./dist/nano-box.js",
+      "require": "./dist/nano-box.umd.cjs"
+    },
+    "./style.css": "./dist/nano-box.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite --config playground/vite.config.ts",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NanoKim/nano-box.git"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "components",
+    "ui-library"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NanoKim/nano-box/issues"
+  },
+  "homepage": "https://github.com/NanoKim/nano-box#readme",
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.1",
+    "vue": "^3.5.41"
+  }
+}
