@@ -25,7 +25,7 @@
       "import": "./dist/*.js",
       "require": "./dist/*.umd.cjs"
     },
-    "./style.css": "./dist/nano-box.css"
+    "./nano-box.css": "./dist/nano-box.css"
   },
   "files": [
     "dist"
