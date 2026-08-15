@@ -18,6 +18,11 @@
       "import": "./dist/nano-box.js",
       "require": "./dist/nano-box.umd.cjs"
     },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js",
+      "require": "./dist/*.umd.cjs"
+    },
     "./style.css": "./dist/nano-box.css"
   },
   "files": [
@@ -39,10 +44,6 @@
   ],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NanoKim/nano-box/issues"
-  },
-  "homepage": "https://github.com/NanoKim/nano-box#readme",
   "peerDependencies": {
     "vue": "^3.0.0"
   },
