@@ -1,0 +1,17 @@
+import { Plugin } from 'vue';
+import { default as AlertComponent } from './src/alert.vue';
+import { default as ConfirmComponent } from './src/confirm.vue';
+import { default as DialogComponent } from './src/dialog.vue';
+import { default as DrawerComponent } from './src/drawer.vue';
+import { default as LoadingComponent } from './src/loading.vue';
+import { default as ToastComponent } from './src/toast.vue';
+import { default as TooltipComponent } from './src/tooltip.vue';
+export declare const NanoAlert: typeof AlertComponent & Plugin;
+export declare const NanoConfirm: typeof ConfirmComponent & Plugin;
+export declare const NanoDialog: typeof DialogComponent & Plugin;
+export declare const NanoDrawer: typeof DrawerComponent & Plugin;
+export declare const NanoLoading: typeof LoadingComponent & Plugin;
+export declare const NanoToast: typeof ToastComponent & Plugin;
+export declare const NanoTooltip: typeof TooltipComponent & Plugin;
+export declare const NanoOverlaysPlugin: Plugin;
+export default NanoOverlaysPlugin;

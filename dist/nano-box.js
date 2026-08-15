@@ -1,10 +1,10 @@
-import { Teleport as e, Transition as t, computed as n, createBlock as r, createCommentVNode as i, createElementBlock as a, createElementVNode as o, createVNode as s, defineComponent as c, inject as l, mergeProps as u, nextTick as d, normalizeClass as f, normalizeStyle as p, onMounted as m, openBlock as h, provide as g, ref as _, renderSlot as v, resolveComponent as y, resolveDynamicComponent as b, toDisplayString as x, unref as S, useAttrs as C, useSlots as w, vShow as ee, watch as T, withCtx as E, withDirectives as D, withModifiers as O } from "vue";
-import './nano-box.css';//#region src/components/input/src/input.vue?vue&type=script&setup=true&lang.ts
-var k = [
+import { Teleport as e, Transition as t, computed as n, createBlock as r, createCommentVNode as i, createElementBlock as a, createElementVNode as o, createVNode as s, defineComponent as c, inject as l, mergeProps as u, nextTick as d, normalizeClass as f, normalizeStyle as p, onMounted as m, openBlock as h, provide as g, ref as _, renderSlot as v, resolveComponent as y, resolveDynamicComponent as b, toDisplayString as x, unref as S, useAttrs as C, useSlots as w, vShow as T, watch as E, withCtx as D, withDirectives as O, withModifiers as k } from "vue";
+import './nano-box.css';//#region src/components/forms/src/input.vue?vue&type=script&setup=true&lang.ts
+var A = [
 	"type",
 	"value",
 	"disabled"
-], A = /* @__PURE__ */ c({
+], j = /* @__PURE__ */ c({
 	name: "NanoInput",
 	inheritAttrs: !1,
 	__name: "input",
@@ -41,80 +41,19 @@ var k = [
 			onBlur: t[1] ||= (e) => s("blur", e),
 			onFocus: t[2] ||= (e) => s("focus", e),
 			class: "nano-input__inner"
-		}), null, 16, k), r.clearable && l.value && !r.disabled ? (h(), a("span", {
+		}), null, 16, A), r.clearable && l.value && !r.disabled ? (h(), a("span", {
 			key: 0,
 			class: "nano-input__clear",
 			onClick: d
 		}, " ✕ ")) : i("", !0)], 2));
 	}
 });
-A.install = (e) => {
-	e.component("NanoInput", A);
+j.install = (e) => {
+	e.component("NanoInput", j);
 };
 //#endregion
-//#region src/components/layout/src/container.vue
-var j = /* @__PURE__ */ c({
-	name: "NanoContainer",
-	__name: "container",
-	setup(e) {
-		let t = w(), r = n(() => t.default ? t.default().some((e) => e.type?.name === "NanoAside" || e.props && "aside" in e.props) : !1);
-		return (e, t) => (h(), a("section", { class: f(["nano-container", { "is-vertical": r.value }]) }, [v(e.$slots, "default")], 2));
-	}
-}), M = /* @__PURE__ */ c({
-	name: "NanoHeader",
-	__name: "header",
-	props: { height: { default: "60px" } },
-	setup(e) {
-		return (t, n) => (h(), a("header", {
-			class: "nano-header",
-			style: p({ height: e.height })
-		}, [v(t.$slots, "default")], 4));
-	}
-}), N = /* @__PURE__ */ c({
-	name: "NanoAside",
-	__name: "aside",
-	props: { width: { default: "300px" } },
-	setup(e) {
-		return (t, n) => (h(), a("aside", {
-			class: "nano-aside",
-			style: p({ width: e.width })
-		}, [v(t.$slots, "default")], 4));
-	}
-}), P = { class: "nano-main" }, F = /* @__PURE__ */ c({
-	name: "NanoMain",
-	__name: "main",
-	setup(e) {
-		return (e, t) => (h(), a("main", P, [v(e.$slots, "default")]));
-	}
-}), I = /* @__PURE__ */ c({
-	name: "NanoFooter",
-	__name: "footer",
-	props: { height: { default: "60px" } },
-	setup(e) {
-		return (t, n) => (h(), a("footer", {
-			class: "nano-footer",
-			style: p({ height: e.height })
-		}, [v(t.$slots, "default")], 4));
-	}
-}), L = j, R = M, z = N, B = F, V = I, H = [
-	L,
-	R,
-	z,
-	B,
-	V
-], U = { install(e) {
-	H.forEach((t) => {
-		t.name && e.component(t.name, t);
-	});
-} };
-H.forEach((e) => {
-	e.install = (t) => {
-		e.name && t.component(e.name, e);
-	};
-});
-//#endregion
-//#region src/components/scrollbar/src/scrollbar.vue?vue&type=script&setup=true&lang.ts
-var W = { class: "nano-scrollbar__wrap" }, G = /* @__PURE__ */ c({
+//#region src/components/generals/src/scrollbar.vue?vue&type=script&setup=true&lang.ts
+var M = { class: "nano-scrollbar__wrap" }, N = /* @__PURE__ */ c({
 	name: "NanoScrollbar",
 	__name: "scrollbar",
 	props: {
@@ -134,12 +73,73 @@ var W = { class: "nano-scrollbar__wrap" }, G = /* @__PURE__ */ c({
 		return (t, n) => (h(), a("div", {
 			class: "nano-scrollbar",
 			style: p(i.value)
-		}, [o("div", W, [(h(), r(b(e.tag), { class: "nano-scrollbar__view" }, {
-			default: E(() => [v(t.$slots, "default")]),
+		}, [o("div", M, [(h(), r(b(e.tag), { class: "nano-scrollbar__view" }, {
+			default: D(() => [v(t.$slots, "default")]),
 			_: 3
 		}))])], 4));
 	}
-}), K = /* @__PURE__ */ c({
+}), P = /* @__PURE__ */ c({
+	name: "NanoContainer",
+	__name: "container",
+	setup(e) {
+		let t = w(), r = n(() => t.default ? t.default().some((e) => e.type?.name === "NanoAside" || e.props && "aside" in e.props) : !1);
+		return (e, t) => (h(), a("section", { class: f(["nano-container", { "is-vertical": r.value }]) }, [v(e.$slots, "default")], 2));
+	}
+}), F = /* @__PURE__ */ c({
+	name: "NanoHeader",
+	__name: "header",
+	props: { height: { default: "60px" } },
+	setup(e) {
+		return (t, n) => (h(), a("header", {
+			class: "nano-header",
+			style: p({ height: e.height })
+		}, [v(t.$slots, "default")], 4));
+	}
+}), ee = /* @__PURE__ */ c({
+	name: "NanoAside",
+	__name: "aside",
+	props: { width: { default: "300px" } },
+	setup(e) {
+		return (t, n) => (h(), a("aside", {
+			class: "nano-aside",
+			style: p({ width: e.width })
+		}, [v(t.$slots, "default")], 4));
+	}
+}), I = { class: "nano-main" }, L = /* @__PURE__ */ c({
+	name: "NanoMain",
+	__name: "main",
+	setup(e) {
+		return (e, t) => (h(), a("main", I, [v(e.$slots, "default")]));
+	}
+}), R = /* @__PURE__ */ c({
+	name: "NanoFooter",
+	__name: "footer",
+	props: { height: { default: "60px" } },
+	setup(e) {
+		return (t, n) => (h(), a("footer", {
+			class: "nano-footer",
+			style: p({ height: e.height })
+		}, [v(t.$slots, "default")], 4));
+	}
+}), z = P, B = F, V = ee, H = L, U = R, W = [
+	z,
+	B,
+	V,
+	H,
+	U
+], G = { install(e) {
+	W.forEach((t) => {
+		t.name && e.component(t.name, t);
+	});
+} };
+W.forEach((e) => {
+	e.install = (t) => {
+		e.name && t.component(e.name, e);
+	};
+});
+//#endregion
+//#region src/components/navigations/src/menu.vue
+var K = /* @__PURE__ */ c({
 	name: "NanoMenu",
 	__name: "menu",
 	props: {
@@ -157,11 +157,11 @@ var W = { class: "nano-scrollbar__wrap" }, G = /* @__PURE__ */ c({
 			handleSelect: (e) => {
 				a("select", e);
 			}
-		}), (e, t) => (h(), r(S(G), {
+		}), (e, t) => (h(), r(S(N), {
 			"max-height": i.maxHeight,
 			"max-width": i.maxWidth
 		}, {
-			default: E(() => [o("ul", { class: f(["nano-menu", `nano-menu-${i.mode}`]) }, [v(e.$slots, "default")], 2)]),
+			default: D(() => [o("ul", { class: f(["nano-menu", `nano-menu-${i.mode}`]) }, [v(e.$slots, "default")], 2)]),
 			_: 3
 		}, 8, ["max-height", "max-width"]));
 	}
@@ -185,7 +185,7 @@ var W = { class: "nano-scrollbar__wrap" }, G = /* @__PURE__ */ c({
 			d(() => {
 				b();
 			});
-		}), a?.isOpen && T(() => a.isOpen.value, (e) => {
+		}), a?.isOpen && E(() => a.isOpen.value, (e) => {
 			e && d(() => {
 				b();
 			});
@@ -195,13 +195,13 @@ var W = { class: "nano-scrollbar__wrap" }, G = /* @__PURE__ */ c({
 				content: g.value,
 				placement: c.value
 			}, {
-				default: E(() => [o("li", {
+				default: D(() => [o("li", {
 					class: f(["nano-menu-item", {
 						"is-active": s.value,
 						"is-disabled": e.disabled,
 						"is-sub-item": !!S(a)
 					}]),
-					onClick: O(u, ["stop"])
+					onClick: k(u, ["stop"])
 				}, [o("span", {
 					ref_key: "textRef",
 					ref: p,
@@ -234,22 +234,22 @@ var W = { class: "nano-scrollbar__wrap" }, G = /* @__PURE__ */ c({
 		m(() => {
 			C.value && C.value.scrollWidth > C.value.clientWidth && (w.value = r.title);
 		});
-		let T = (e) => {
+		let E = (e) => {
 			let t = e;
 			t.style.height = "0", t.style.opacity = "0", t.style.overflow = "hidden";
-		}, k = (e, t) => {
+		}, A = (e, t) => {
 			let n = e;
 			n.style.transition = "height 0.3s ease, opacity 0.3s ease", n.style.height = `${n.scrollHeight}px`, n.style.opacity = "1", n.addEventListener("transitionend", t, { once: !0 });
-		}, A = (e) => {
-			let t = e;
-			t.style.transition = "", t.style.height = "auto", t.style.overflow = "";
 		}, j = (e) => {
 			let t = e;
+			t.style.transition = "", t.style.height = "auto", t.style.overflow = "";
+		}, M = (e) => {
+			let t = e;
 			t.style.height = `${t.scrollHeight}px`, t.style.opacity = "1", t.style.overflow = "hidden";
-		}, M = (e, t) => {
+		}, N = (e, t) => {
 			let n = e;
 			n.offsetHeight, n.style.transition = "height 0.3s ease, opacity 0.3s ease", n.style.height = "0", n.style.opacity = "0", n.addEventListener("transitionend", t, { once: !0 });
-		}, N = (e) => {
+		}, P = (e) => {
 			let t = e;
 			t.style.transition = "", t.style.height = "", t.style.overflow = "";
 		};
@@ -264,9 +264,9 @@ var W = { class: "nano-scrollbar__wrap" }, G = /* @__PURE__ */ c({
 				content: w.value,
 				placement: b.value
 			}, {
-				default: E(() => [o("div", {
+				default: D(() => [o("div", {
 					class: "nano-submenu__title",
-					onClick: O(d, ["stop"])
+					onClick: k(d, ["stop"])
 				}, [o("span", {
 					ref_key: "textRef",
 					ref: C,
@@ -274,14 +274,14 @@ var W = { class: "nano-scrollbar__wrap" }, G = /* @__PURE__ */ c({
 				}, x(e.title), 513), o("span", { class: f(["nano-submenu__arrow", { "is-open": u.value }]) }, "▼", 2)])]),
 				_: 1
 			}, 8, ["content", "placement"]), s(t, {
-				onBeforeEnter: T,
-				onEnter: k,
-				onAfterEnter: A,
-				onBeforeLeave: j,
-				onLeave: M,
-				onAfterLeave: N
+				onBeforeEnter: E,
+				onEnter: A,
+				onAfterEnter: j,
+				onBeforeLeave: M,
+				onLeave: N,
+				onAfterLeave: P
 			}, {
-				default: E(() => [D(o("ul", J, [v(n.$slots, "default")], 512), [[ee, u.value]])]),
+				default: D(() => [O(o("ul", J, [v(n.$slots, "default")], 512), [[T, u.value]])]),
 				_: 3
 			})], 2);
 		};
@@ -326,7 +326,7 @@ var W = { class: "nano-scrollbar__wrap" }, G = /* @__PURE__ */ c({
 			onMouseenter: m,
 			onMouseleave: g
 		}, [v(o.$slots, "default"), (h(), r(e, { to: "body" }, [s(t, { name: "nano-fade" }, {
-			default: E(() => [c.value && n.content ? (h(), a("div", {
+			default: D(() => [c.value && n.content ? (h(), a("div", {
 				key: 0,
 				ref_key: "tooltipRef",
 				ref: f,
@@ -362,12 +362,13 @@ function te(e = !1) {
 //#endregion
 //#region src/index.ts
 var ne = [
-	A,
-	L,
-	R,
+	j,
+	N,
 	z,
 	B,
 	V,
+	H,
+	U,
 	X,
 	Z,
 	Q,
@@ -378,4 +379,4 @@ var ne = [
 	});
 } };
 //#endregion
-export { z as NanoAside, L as NanoContainer, V as NanoFooter, R as NanoHeader, A as NanoInput, U as NanoLayout, B as NanoMain, X as NanoMenu, Z as NanoMenuItem, Q as NanoSubMenu, $ as NanoTooltip, re as default, te as useThemeTransition };
+export { V as NanoAside, z as NanoContainer, U as NanoFooter, B as NanoHeader, j as NanoInput, G as NanoLayout, H as NanoMain, X as NanoMenu, Z as NanoMenuItem, N as NanoScrollbar, Q as NanoSubMenu, $ as NanoTooltip, re as default, te as useThemeTransition };

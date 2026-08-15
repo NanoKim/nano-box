@@ -1,0 +1,13 @@
+/* --- Nano Container --- */
+.nano-container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    flex: 1;
+}
+
+.nano-container.is-vertical {
+    flex-direction: row;
+}
+/* --- Nano Container --- */

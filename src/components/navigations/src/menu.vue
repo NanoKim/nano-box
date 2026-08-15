@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { provide, computed } from 'vue'
-import { NanoScrollbar } from '../../scrollbar'
+import { NanoScrollbar } from '../../generals'
 
 defineOptions({
   name: 'NanoMenu'

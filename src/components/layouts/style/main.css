@@ -1,0 +1,10 @@
+/* --- Nano Main --- */
+.nano-main {
+    display: block;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--nano-bg-color);
+    color: var(--nano-text-color-primary);
+}
+/* --- Nano Main --- */

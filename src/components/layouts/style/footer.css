@@ -1,0 +1,12 @@
+/* --- Nano Footer --- */
+.nano-footer {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 20px;
+    flex-shrink: 0;
+    background-color: var(--nano-bg-color);
+    border-top: 1px solid var(--nano-border-color-light);
+    color: var(--nano-text-color-primary);
+}
+/* --- Nano Footer --- */

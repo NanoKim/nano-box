@@ -1,0 +1,10 @@
+/* --- Nano Aside --- */
+.nano-aside {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    background-color: var(--nano-bg-color);
+    border-right: 1px solid var(--nano-border-color-light);
+    color: var(--nano-text-color-primary);
+    overflow-y: auto;
+}
+/* --- Nano Aside --- */

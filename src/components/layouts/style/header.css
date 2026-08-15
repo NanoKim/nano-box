@@ -1,0 +1,12 @@
+/* --- Nano Header --- */
+.nano-header {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 20px;
+    flex-shrink: 0;
+    background-color: var(--nano-bg-color);
+    border-bottom: 1px solid var(--nano-border-color-light);
+    color: var(--nano-text-color-primary);
+}
+/* --- Nano Header --- */
