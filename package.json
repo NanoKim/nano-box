@@ -42,9 +42,12 @@
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
+    "@typescript/typescript6": "^6.0.2",
     "@vitejs/plugin-vue": "^6.0.8",
     "typescript": "^7.0.2",
     "vite": "^8.2.1",
-    "vue": "^3.5.41"
+    "vite-plugin-dts": "^5.0.3",
+    "vue": "^3.5.41",
+    "vue-tsc": "^3.3.10"
   }
 }

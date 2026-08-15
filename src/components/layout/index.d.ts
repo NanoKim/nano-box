@@ -1,0 +1,13 @@
+import type { Plugin } from 'vue';
+import ContainerComponent from './src/container.vue';
+import HeaderComponent from './src/header.vue';
+import AsideComponent from './src/aside.vue';
+import MainComponent from './src/main.vue';
+import FooterComponent from './src/footer.vue';
+export declare const NanoContainer: typeof ContainerComponent & Plugin;
+export declare const NanoHeader: typeof HeaderComponent & Plugin;
+export declare const NanoAside: typeof AsideComponent & Plugin;
+export declare const NanoMain: typeof MainComponent & Plugin;
+export declare const NanoFooter: typeof FooterComponent & Plugin;
+export declare const NanoLayoutPlugin: Plugin;
+export default NanoLayoutPlugin;
