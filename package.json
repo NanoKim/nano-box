@@ -6,6 +6,12 @@
   "main": "./dist/nano-box.umd.cjs",
   "module": "./dist/nano-box.js",
   "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": ["./dist/*"]
+    }
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
