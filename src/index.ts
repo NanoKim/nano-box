@@ -1,6 +1,6 @@
 import './style/main.css'
 
-import type { App } from 'vue'
+import type { App, Component } from 'vue'
 import { NanoInput } from './components/input'
 import { NanoContainer, NanoHeader, NanoAside, NanoMain, NanoFooter } from './components/layout'
 import { NanoMenu, NanoMenuItem, NanoSubMenu } from './components/menu'
@@ -14,7 +14,7 @@ export { default as NanoLayout } from './components/layout'
 
 export { useThemeTransition } from './composables/theme'
 
-const components = [
+const components: Component[] = [
   NanoInput,
   NanoContainer,
   NanoHeader,
@@ -26,6 +26,21 @@ const components = [
   NanoSubMenu,
   NanoTooltip,
 ]
+
+declare module '@vue/runtime-core' {
+  interface GlobalComponents {
+    NanoContainer: typeof NanoContainer
+    NanoHeader: typeof NanoHeader
+    NanoAside: typeof NanoAside
+    NanoMain: typeof NanoMain
+    NanoFooter: typeof NanoFooter
+    NanoMenu: typeof NanoMenu
+    NanoMenuItem: typeof NanoMenuItem
+    NanoSubMenu: typeof NanoSubMenu
+    NanoInput: typeof NanoInput
+    NanoTooltip: typeof NanoTooltip
+  }
+}
 
 export default {
   install(app: App) {
