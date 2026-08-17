@@ -1,8 +1,8 @@
-@import './variables.css';
-@import './composables.css';
+@import './variable.css';
+@import './composable.css';
 
-@import '../components/forms/index.css';
-@import '../components/layouts/index.css';
-@import '../components/generals/index.css';
-@import '../components/overlays/index.css';
-@import '../components/navigations/index.css';
+@import '../component/form/index.css';
+@import '../component/layout/index.css';
+@import '../component/general/index.css';
+@import '../component/overlay/index.css';
+@import '../component/navigation/index.css';

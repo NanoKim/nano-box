@@ -1,20 +1,21 @@
 import { App } from 'vue';
-import { NanoInput } from './components/forms';
-import { NanoScrollbar } from './components/generals';
-import { NanoContainer, NanoHeader, NanoAside, NanoMain, NanoFooter } from './components/layouts';
-import { NanoMenu, NanoMenuItem, NanoSubMenu } from './components/navigations';
-import { NanoTooltip } from './components/overlays';
+import { NanoInput } from './component/form';
+import { NanoScrollbar, NanoIcon } from './component/general';
+import { NanoContainer, NanoHeader, NanoAside, NanoMain, NanoFooter } from './component/layout';
+import { NanoMenu, NanoMenuItem, NanoSubMenu } from './component/navigation';
+import { NanoTooltip } from './component/overlay';
 export { NanoInput };
-export { NanoScrollbar };
+export { NanoScrollbar, NanoIcon };
 export { NanoContainer, NanoHeader, NanoAside, NanoMain, NanoFooter };
 export { NanoMenu, NanoMenuItem, NanoSubMenu };
 export { NanoTooltip };
-export { default as NanoLayout } from './components/layouts';
-export { useThemeTransition } from './composables/theme';
+export { default as NanoLayout } from './component/layout';
+export { useThemeTransition } from './composable/theme';
 declare module '@vue/runtime-core' {
     interface GlobalComponents {
         NanoInput: typeof NanoInput;
         NanoScrollbar: typeof NanoScrollbar;
+        NanoIcon: typeof NanoIcon;
         NanoContainer: typeof NanoContainer;
         NanoHeader: typeof NanoHeader;
         NanoAside: typeof NanoAside;

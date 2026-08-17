@@ -1,0 +1,88 @@
+/* --- Nano Menu Item --- */
+.nano-menu-item {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 14px;
+    color: var(--nano-text-color-regular);
+    box-sizing: border-box;
+    user-select: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 0;
+    overflow: hidden;
+    gap: 12px;
+}
+
+.nano-menu-item:hover {
+    background-color: var(--nano-color-primary-light-9);
+    color: var(--nano-color-primary);
+}
+
+.nano-menu-vertical .nano-menu-item,
+.nano-menu-vertical .nano-submenu__title {
+    width: 100%;
+    border-left: 3px solid transparent;
+    box-sizing: border-box;
+}
+
+.nano-menu-vertical .nano-menu-item.is-active {
+    color: var(--nano-color-primary);
+    font-weight: 600;
+    background-color: var(--nano-color-primary-light-9);
+    border-left: 3px solid var(--nano-color-primary);
+    border-bottom: none;
+}
+
+.nano-menu-horizontal .nano-menu-item {
+    position: relative;
+    border-bottom: 3px solid transparent;
+}
+
+.nano-menu-horizontal .nano-menu-item.is-active {
+    color: var(--nano-color-primary);
+    font-weight: 600;
+    border-right: none;
+    border-bottom: 3px solid var(--nano-color-primary);
+    background-color: transparent;
+}
+
+.nano-menu-item.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: transparent;
+    color: var(--nano-disabled-text-color);
+}
+
+.nano-menu-item__icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.nano-menu-item__empty-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+.nano-menu-vertical .nano-menu-item {
+    width: 100%;
+    border-left: 5px solid transparent;
+    box-sizing: border-box;
+}
+
+.nano-menu-item__text {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* --- Nano Menu Item --- */
