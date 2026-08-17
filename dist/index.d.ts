@@ -4,6 +4,7 @@ import { NanoScrollbar, NanoIcon } from './component/general';
 import { NanoContainer, NanoHeader, NanoAside, NanoMain, NanoFooter } from './component/layout';
 import { NanoMenu, NanoMenuItem, NanoSubMenu } from './component/navigation';
 import { NanoTooltip } from './component/overlay';
+declare module 'nano-box/nano-box.css';
 export { NanoInput };
 export { NanoScrollbar, NanoIcon };
 export { NanoContainer, NanoHeader, NanoAside, NanoMain, NanoFooter };

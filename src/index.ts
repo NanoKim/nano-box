@@ -1,5 +1,7 @@
 import './style/main.css'
 
+declare module 'nano-box/nano-box.css'
+
 import type { App, Component } from 'vue'
 import { NanoInput } from './component/form'
 import { NanoScrollbar, NanoIcon } from './component/general';
