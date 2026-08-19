@@ -27,6 +27,7 @@ const emit = defineEmits<{
 }>()
 
 const popoverRegistry = new Map<string, () => void>()
+let globalLeaveTimer: number | null = null
 
 const registerPopover = (index: string, closeFn: () => void) => {
   popoverRegistry.set(index, closeFn)
@@ -44,6 +45,21 @@ const closeAllPopovers = (exceptIndex?: string) => {
   })
 }
 
+const clearGlobalLeaveTimer = () => {
+  if (globalLeaveTimer !== null) {
+    clearTimeout(globalLeaveTimer)
+    globalLeaveTimer = null
+  }
+}
+
+const startGlobalLeaveTimer = (callback: () => void, delay = 350) => {
+  clearGlobalLeaveTimer()
+  globalLeaveTimer = window.setTimeout(() => {
+    callback()
+    globalLeaveTimer = null
+  }, delay)
+}
+
 provide('nanoMenu', {
   activeindex: computed(() => props.defaultActive),
   mode: props.mode,
@@ -53,7 +69,9 @@ provide('nanoMenu', {
   },
   registerPopover,
   unregisterPopover,
-  closeAllPopovers
+  closeAllPopovers,
+  clearGlobalLeaveTimer,
+  startGlobalLeaveTimer
 })
 </script>
 

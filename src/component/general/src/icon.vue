@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<Props>(), {
   size: 30
 })
 
-const images = import.meta.glob('../../../assets/*.{png,ico,svg}', { eager: true, import: 'default' }) as Record<string, string>
+const images = import.meta.glob('../../../assets/icon/*.{png,ico,svg}', { eager: true, import: 'default' }) as Record<string, string>
 
 const iconSrc = computed(() => {
   if (!props.name) return ''
@@ -25,9 +25,9 @@ const iconSrc = computed(() => {
   }
 
   const possibleKeys = [
-    `../../../assets/${props.name}.png`,
-    `../../../assets/${props.name}.ico`,
-    `../../../assets/${props.name}.svg`
+    `../../../assets/icon/${props.name}.png`,
+    `../../../assets/icon/${props.name}.ico`,
+    `../../../assets/icon/${props.name}.svg`
   ]
 
   for (const key of possibleKeys) {

@@ -28,8 +28,22 @@ const isPopoverOpen = ref(false)
 const popoverTop = ref(0)
 const popoverLeft = ref(0)
 
-let leaveTimer: number | null = null
 const subMenuRef = ref<HTMLElement | null>(null)
+const activeChildren = ref(new Set<string>())
+
+const registerActiveChild = (childIndex: string) => {
+  activeChildren.value.add(childIndex)
+  if (parentSubMenu && typeof parentSubMenu.registerActiveChild === 'function') {
+    parentSubMenu.registerActiveChild(childIndex)
+  }
+}
+
+const unregisterActiveChild = (childIndex: string) => {
+  activeChildren.value.delete(childIndex)
+  if (parentSubMenu && typeof parentSubMenu.unregisterActiveChild === 'function') {
+    parentSubMenu.unregisterActiveChild(childIndex)
+  }
+}
 
 const isCollapse = computed(() => {
   const menuCollapse = menuContext.collapse
@@ -37,15 +51,16 @@ const isCollapse = computed(() => {
     ? !!menuCollapse.value
     : !!menuCollapse
 
-  const isVertical = menuContext.mode?.value === 'vertical' || menuContext.mode === 'vertical' || !menuContext.mode
-  return !!(collapseVal && isVertical)
+  const modeVal = typeof menuContext.mode?.value !== 'undefined' ? menuContext.mode.value : menuContext.mode
+  const isVertical = modeVal === 'vertical' || !modeVal
+  return (collapseVal && isVertical)
 })
 
 watch(isCollapse, (val) => {
   if (val && !parentSubMenu) {
     isOpen.value = false
     isPopoverOpen.value = false
-    clearLeaveTimer()
+    if (menuContext.clearGlobalLeaveTimer) menuContext.clearGlobalLeaveTimer()
   }
 })
 
@@ -78,23 +93,7 @@ const handleTitleClick = () => {
 }
 
 const closePopover = () => {
-  clearLeaveTimer()
   isPopoverOpen.value = false
-}
-
-// ★ 타이머를 완전히 박멸하고 재설정하는 전용 함수
-const clearLeaveTimer = () => {
-  if (leaveTimer !== null) {
-    clearTimeout(leaveTimer)
-    leaveTimer = null
-  }
-  if (parentSubMenu && typeof parentSubMenu.clearLeaveTimer === 'function') {
-    parentSubMenu.clearLeaveTimer()
-  }
-}
-
-const cancelLeaveTimer = () => {
-  clearLeaveTimer()
 }
 
 onMounted(() => {
@@ -104,7 +103,6 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  clearLeaveTimer()
   if (!parentSubMenu && menuContext.unregisterPopover) {
     menuContext.unregisterPopover(props.index)
   }
@@ -115,12 +113,25 @@ provide('nanoSubMenu', {
   isOpen: isOpen,
   isPopoverOpen: isPopoverOpen,
   closePopover,
-  clearLeaveTimer
+  registerActiveChild,
+  unregisterActiveChild
 })
 
 const isActive = computed(() => {
-  return menuContext.activeindex?.value === props.index
+  const currentActive = menuContext.activeindex?.value === props.index
+  if (currentActive) return true
+  return activeChildren.value.size > 0
 })
+
+watch(isActive, (active) => {
+  if (parentSubMenu) {
+    if (active) {
+      parentSubMenu.registerActiveChild(props.index)
+    } else {
+      parentSubMenu.unregisterActiveChild(props.index)
+    }
+  }
+}, { immediate: true })
 
 const tooltipPlacement = computed(() => {
   const modeVal = menuContext.mode?.value || menuContext.mode
@@ -133,9 +144,9 @@ const tooltipText = computed(() => {
 })
 
 const onMouseEnter = () => {
-  // ★ 진입하는 순간 잔류 타이머를 무조건 초기화하여 떴다 사라지는 버그 원천 차단
-  clearLeaveTimer()
-
+  if (menuContext.clearGlobalLeaveTimer) {
+    menuContext.clearGlobalLeaveTimer()
+  }
   if (isCollapse.value) {
     if (!parentSubMenu && menuContext.closeAllPopovers) {
       menuContext.closeAllPopovers(props.index)
@@ -147,32 +158,34 @@ const onMouseEnter = () => {
 
 const onMouseLeave = () => {
   if (isCollapse.value) {
-    clearLeaveTimer()
-    leaveTimer = window.setTimeout(() => {
-      isPopoverOpen.value = false
-      if (!parentSubMenu && menuContext.closeAllPopovers) {
-        menuContext.closeAllPopovers()
-      }
-      leaveTimer = null
-    }, 300)
+    if (menuContext.startGlobalLeaveTimer) {
+      menuContext.startGlobalLeaveTimer(() => {
+        isPopoverOpen.value = false
+        if (menuContext.closeAllPopovers) {
+          menuContext.closeAllPopovers()
+        }
+      }, 350)
+    }
   }
 }
 
 const onPopoverMouseEnter = () => {
-  clearLeaveTimer()
+  if (menuContext.clearGlobalLeaveTimer) {
+    menuContext.clearGlobalLeaveTimer()
+  }
   isPopoverOpen.value = true
 }
 
 const onPopoverMouseLeave = () => {
   if (isCollapse.value) {
-    clearLeaveTimer()
-    leaveTimer = window.setTimeout(() => {
-      isPopoverOpen.value = false
-      if (!parentSubMenu && menuContext.closeAllPopovers) {
-        menuContext.closeAllPopovers()
-      }
-      leaveTimer = null
-    }, 300)
+    if (menuContext.startGlobalLeaveTimer) {
+      menuContext.startGlobalLeaveTimer(() => {
+        isPopoverOpen.value = false
+        if (menuContext.closeAllPopovers) {
+          menuContext.closeAllPopovers()
+        }
+      }, 350)
+    }
   }
 }
 
@@ -238,10 +251,11 @@ const onAfterLeave = (el: Element) => {
   >
     <nano-tooltip :content="tooltipText" :placement="tooltipPlacement">
       <div class="nano-submenu__title" @click.stop="handleTitleClick">
-        <span class="nano-submenu__icon-wrapper">
+        <span v-if="Boolean(props.icon) || (isCollapse && !parentSubMenu)" class="nano-submenu__icon-wrapper">
           <nano-icon v-if="props.icon" :name="props.icon" />
-          <span v-else-if="isCollapse && !parentSubMenu" class="nano-submenu__empty-icon"></span>
+          <span v-else class="nano-submenu__empty-icon"></span>
         </span>
+
         <span ref="textRef" class="nano-submenu__title-text" :style="isCollapse && !parentSubMenu ? 'display: none;' : ''">
           {{ title }}
         </span>

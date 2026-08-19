@@ -27,7 +27,15 @@ const isActive = computed(() => {
 })
 
 const isCollapse = computed(() => {
-  return menuContext.collapse?.value && menuContext.mode?.value === 'vertical' && !subMenuContext
+  const menuCollapse = menuContext.collapse
+  const collapseVal: boolean = typeof menuCollapse === 'object' && menuCollapse !== null && 'value' in menuCollapse
+    ? !!menuCollapse.value
+    : !!menuCollapse
+
+  const modeVal = typeof menuContext.mode?.value !== 'undefined' ? menuContext.mode.value : menuContext.mode
+  const isVertical = modeVal === 'vertical' || !modeVal
+
+  return (collapseVal && isVertical && !subMenuContext)
 })
 
 const tooltipPlacement = computed(() => {
@@ -53,16 +61,20 @@ onMounted(() => {
 })
 
 const tooltipText = computed(() => {
-  if (!props.showTooltip) return ''
-  if (isCollapse.value) {
-    return defaultSlotText.value
+  if (!props.showTooltip || menuContext.mode?.value === 'horizontal' || !isCollapse.value) {
+    return ''
   }
   return defaultSlotText.value
 })
 </script>
 
 <template>
-  <nano-tooltip :content="tooltipText" :placement="tooltipPlacement">
+  <component
+    :is="tooltipText ? 'nano-tooltip' : 'div'"
+    :content="tooltipText"
+    :placement="tooltipPlacement"
+    :style="!tooltipText ? 'display: contents;' : ''"
+  >
     <li
       class="nano-menu-item"
       :class="{
@@ -73,13 +85,14 @@ const tooltipText = computed(() => {
       }"
       @click.stop="handleClick"
     >
-      <span class="nano-menu-item__icon-wrapper">
-        <nano-icon v-if="props.icon" :name="props.icon" />
+      <span v-if="Boolean(props.icon) || isCollapse" class="nano-menu-item__icon-wrapper">
+        <nano-icon v-if="Boolean(props.icon)" :name="props.icon" />
         <span v-else-if="isCollapse" class="nano-menu-item__empty-icon"></span>
       </span>
+
       <span ref="textRef" class="nano-menu-item__text" :style="isCollapse ? 'display: none;' : ''">
         <slot />
       </span>
     </li>
-  </nano-tooltip>
+  </component>
 </template>

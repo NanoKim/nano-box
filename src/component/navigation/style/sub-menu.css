@@ -48,6 +48,12 @@
     padding: 0;
 }
 
+.nano-submenu.is-collapse:hover .nano-submenu__title,
+.nano-submenu.is-collapse.is-active .nano-submenu__title {
+    border-left: 3px solid var(--nano-color-primary);
+    background-color: var(--nano-color-primary-light-9);
+}
+
 .nano-submenu__title-text {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -163,6 +169,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.nano-submenu__popover-list .nano-menu-item.is-active {
+    border-left: 3px solid var(--nano-color-primary);
+    color: var(--nano-color-primary);
 }
 
 .nano-popover-enter-active {
