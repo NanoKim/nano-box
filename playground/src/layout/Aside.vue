@@ -28,10 +28,10 @@ const handleMenuSelect = (index: string) => {
 </script>
 
 <template>
-  <nano-aside :width="isCollapse ? '65px' : '240px'" class="aside-area" style="transition: width 0.3s;">
+  <nano-aside :width="isCollapse ? '70px' : '240px'" class="aside-area" style="transition: width 0.3s;">
     <div style="padding: 10px; border-bottom: 1px solid var(--nano-border-color-light, #eee); text-align: center; height: 55px">
-      <button @click="toggleCollapse" style="padding: 6px 12px; cursor: pointer; border-radius: 4px; border: 1px solid #ccc; background: #f5f5f5;">
-        {{ isCollapse ? '토글' : '토글' }}
+      <button @click="toggleCollapse" style="width: 50px; padding: 6px; cursor: pointer; border-radius: 4px; border: 1px solid #ccc; background: #f5f5f5;">
+        <nano-icon name="bars"/>
       </button>
     </div>
 
