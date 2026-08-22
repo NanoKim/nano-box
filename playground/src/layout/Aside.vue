@@ -37,20 +37,7 @@ const handleMenuSelect = (index: string) => {
 
     <nano-menu mode="vertical" :collapse="isCollapse" :default-active="activeMenu" @select="handleMenuSelect" style="height: calc(100% - 80px);">
       <nano-menu-item index="/component/guide" icon="book">Guide</nano-menu-item>
-      <nano-menu-item index="" disabled>Lev 1</nano-menu-item>
-      <nano-sub-menu index="Lev1" title="Lev1">
-        <nano-menu-item index="" disabled>Lev1 - 1</nano-menu-item>
-        <nano-menu-item index="" disabled>Lev1 - 2</nano-menu-item>
-        <nano-sub-menu index="Lev2" title="Lev2">
-          <nano-menu-item index="">Lev2 - 1</nano-menu-item>
-          <nano-menu-item index="" disabled>Lev2 - 2</nano-menu-item>
-          <nano-sub-menu index="Lev3" title="SubSubMenus">
-            <nano-menu-item index="">Lev3 - 1</nano-menu-item>
-            <nano-menu-item index="" disabled>Lev3 - 2</nano-menu-item>
-          </nano-sub-menu>
-        </nano-sub-menu>
-      </nano-sub-menu>
-      <nano-sub-menu index="Forms" title="Forms">
+      <nano-sub-menu index="Forms" title="Forms" icon="user">
         <nano-menu-item index="" disabled>Checkbox</nano-menu-item>
         <nano-menu-item index="" disabled>Color Picker</nano-menu-item>
         <nano-menu-item index="" disabled>Date Picker</nano-menu-item>
@@ -88,7 +75,7 @@ const handleMenuSelect = (index: string) => {
       <nano-sub-menu index="Navigations" title="Navigations">
         <nano-menu-item index="" disabled>Backtop</nano-menu-item>
         <nano-menu-item index="" disabled>Breadcrumb</nano-menu-item>
-        <nano-menu-item index="" disabled>Menu</nano-menu-item>
+        <nano-menu-item index="/component/navigation/menu">Menu</nano-menu-item>
         <nano-menu-item index="" disabled>Step</nano-menu-item>
         <nano-menu-item index="" disabled>Tab</nano-menu-item>
         <nano-menu-item index="" disabled>TBU</nano-menu-item>

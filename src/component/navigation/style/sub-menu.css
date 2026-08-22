@@ -35,6 +35,13 @@
     flex-shrink: 0;
     width: 18px;
     height: 18px;
+    margin-left: 3px;
+    margin-right: 0;
+}
+
+.is-collapse .nano-submenu__icon-wrapper {
+    margin-left: 0;
+    margin-right: 3px;
 }
 
 .nano-submenu__empty-icon {

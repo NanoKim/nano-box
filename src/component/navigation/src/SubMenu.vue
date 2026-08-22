@@ -118,9 +118,16 @@ provide('nanoSubMenu', {
 })
 
 const isActive = computed(() => {
-  const currentActive = menuContext.activeindex?.value === props.index
-  if (currentActive) return true
-  return activeChildren.value.size > 0
+  const activeVal = menuContext.activeindex?.value
+  if (!activeVal) return activeChildren.value.size > 0
+  if (activeVal === props.index || activeChildren.value.size > 0) return true
+  const cleanPropsIndex = props.index.toLowerCase()
+  const singularPropsIndex = cleanPropsIndex.endsWith('s') ? cleanPropsIndex.slice(0, -1) : cleanPropsIndex
+  if (activeVal.toLowerCase().includes(singularPropsIndex)) {
+    return true
+  }
+
+  return false
 })
 
 watch(isActive, (active) => {
