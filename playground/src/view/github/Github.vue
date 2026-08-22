@@ -23,8 +23,7 @@ const handleGoToProfile = () => {
           <span class="sub-label">Open Source</span>
           <h1>GitHub Repository</h1>
           <p class="description">
-            NanoBox UI 라이브러리의 소스 코드가 투명하게 공개되어 있습니다.<br />
-            기여(Contribution)와 이슈(Issue) 제기를 통해 더 나은 라이브러리를 함께 만들어보세요!
+            NanoBox UI 라이브러리의 소스 코드가 투명하게 공개되어 있습니다.
           </p>
 
           <div class="action-area">

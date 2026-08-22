@@ -22,7 +22,8 @@
     color: var(--nano-color-primary);
 }
 
-.nano-menu-vertical .nano-menu-item:hover {
+.nano-menu-vertical .nano-menu-item:hover,
+.nano-menu-vertical .nano-submenu__title:hover {
     border-left: 3px solid var(--nano-color-primary);
 }
 
@@ -68,6 +69,7 @@
     flex-shrink: 0;
     width: 18px;
     height: 18px;
+    margin-left: 3px;
 }
 
 .nano-menu-item__empty-icon {

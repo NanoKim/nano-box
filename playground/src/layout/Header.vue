@@ -60,7 +60,8 @@ const handleLogoClick = () => {
     </div>
 
     <button class="theme-btn" @click="toggleTheme" aria-label="Toggle Theme">
-      {{ isDark ? '☀️' : '🌙' }}
+      <nano-icon v-if="isDark" name="sun" :size="24" />
+      <nano-icon v-else name="moon" :size="24" />
     </button>
   </nano-header>
 </template>
@@ -111,7 +112,7 @@ const handleLogoClick = () => {
 
 .theme-btn {
   padding: 8px;
-  background-color: var(--nano-color-primary);
+  background-color: transparent;
   border: none;
   border-radius: 50%;
   cursor: pointer;

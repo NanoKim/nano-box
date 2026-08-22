@@ -29,9 +29,9 @@ const handleMenuSelect = (index: string) => {
 
 <template>
   <nano-aside :width="isCollapse ? '70px' : '240px'" class="aside-area" style="transition: width 0.3s;">
-    <div style="padding: 10px; border-bottom: 1px solid var(--nano-border-color-light, #eee); text-align: center; height: 55px">
-      <button @click="toggleCollapse" style="width: 50px; padding: 6px; cursor: pointer; border-radius: 4px; border: 1px solid #ccc; background: #f5f5f5;">
-        <nano-icon name="bars"/>
+    <div style="padding: 10px; border-bottom: 1px solid var(--nano-border-color-light, #eee); text-align: center; height: 32px">
+      <button @click="toggleCollapse" style="width: 32px; height: 32px; padding: 6px; cursor: pointer; border-radius: 4px; border: 1px solid #ccc; background-color: transparent;">
+        <nano-icon name="bars" size="18" />
       </button>
     </div>
 
