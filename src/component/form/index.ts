@@ -1,5 +1,5 @@
 import type { App, Plugin } from 'vue'
-import NanoInputComponent from './src/input.vue'
+import NanoInputComponent from './src/Input.vue'
 
 export const NanoInput = NanoInputComponent as typeof NanoInputComponent & Plugin
 

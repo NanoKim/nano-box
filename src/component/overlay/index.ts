@@ -1,11 +1,11 @@
 import type { App, Plugin } from 'vue'
-import AlertComponent from './src/alert.vue'
-import ConfirmComponent from './src/confirm.vue'
-import DialogComponent from './src/dialog.vue'
-import DrawerComponent from './src/drawer.vue'
-import LoadingComponent from './src/loading.vue'
-import ToastComponent from './src/toast.vue'
-import TooltipComponent from './src/tooltip.vue'
+import AlertComponent from './src/Alert.vue'
+import ConfirmComponent from './src/Confirm.vue'
+import DialogComponent from './src/Dialog.vue'
+import DrawerComponent from './src/Drawer.vue'
+import LoadingComponent from './src/Loading.vue'
+import ToastComponent from './src/Toast.vue'
+import TooltipComponent from './src/Tooltip.vue'
 
 export const NanoAlert = AlertComponent as typeof AlertComponent & Plugin
 export const NanoConfirm = AlertComponent as typeof ConfirmComponent & Plugin

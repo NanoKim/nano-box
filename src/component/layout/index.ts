@@ -1,9 +1,9 @@
 import type { App, Plugin } from 'vue'
-import ContainerComponent from './src/container.vue'
-import HeaderComponent from './src/header.vue'
-import AsideComponent from './src/aside.vue'
-import MainComponent from './src/main.vue'
-import FooterComponent from './src/footer.vue'
+import ContainerComponent from './src/Container.vue'
+import HeaderComponent from './src/Header.vue'
+import AsideComponent from './src/Aside.vue'
+import MainComponent from './src/Main.vue'
+import FooterComponent from './src/Footer.vue'
 
 export const NanoContainer = ContainerComponent as typeof ContainerComponent & Plugin
 export const NanoHeader = HeaderComponent as typeof HeaderComponent & Plugin

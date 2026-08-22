@@ -1,6 +1,6 @@
 import type { App, Plugin } from 'vue'
-import IconComponent from './src/icon.vue'
-import ScrollbarComponent from './src/scrollbar.vue'
+import IconComponent from './src/Icon.vue'
+import ScrollbarComponent from './src/Scrollbar.vue'
 
 export const NanoIcon = IconComponent as typeof IconComponent & Plugin
 export const NanoScrollbar = ScrollbarComponent as typeof ScrollbarComponent & Plugin

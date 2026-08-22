@@ -1,9 +1,9 @@
 import { Plugin } from 'vue';
-import { default as ContainerComponent } from './src/container.vue';
-import { default as HeaderComponent } from './src/header.vue';
-import { default as AsideComponent } from './src/aside.vue';
-import { default as MainComponent } from './src/main.vue';
-import { default as FooterComponent } from './src/footer.vue';
+import { default as ContainerComponent } from './src/Container.vue';
+import { default as HeaderComponent } from './src/Header.vue';
+import { default as AsideComponent } from './src/Aside.vue';
+import { default as MainComponent } from './src/Main.vue';
+import { default as FooterComponent } from './src/Footer.vue';
 export declare const NanoContainer: typeof ContainerComponent & Plugin;
 export declare const NanoHeader: typeof HeaderComponent & Plugin;
 export declare const NanoAside: typeof AsideComponent & Plugin;

@@ -9,9 +9,9 @@
 
       <section class="section">
         <h2>1. Installation</h2>
-        <p class="section-desc">npm 또는 패키지 매니저를 통해 NanoBox를 설치합니다.</p>
+        <p class="section-desc">현재 GitHub 저장소를 통해 프로젝트에 NanoBox를 설치합니다.</p>
         <div class="code-box">
-          <code>npm install nano-box</code>
+          <code>npm install git+https://github.com/NanoKim/nano-box.git</code>
         </div>
       </section>
 
